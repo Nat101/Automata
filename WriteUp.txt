@@ -1,0 +1,38 @@
+#Natalie Carlson
+#CSCE 351 Homework 1
+#Due: 02/19/2019
+#Write Up
+
+
+1. DFA accept: I modified Dr. Lauter's code by implementing dictionaries
+2. NFA to DFA: 
+	Q became the power set of the original Q; 
+	Sigma remained the same;
+	Start state became all states the original start state could get to with e-transitions;
+	Delta I closed the e-transitions and added all new substates from Q; 
+	Accepting states became all substates of Q that contained the orginal accepting states;
+	Lastly I removed all e-transitions.
+3.NFA Union: 
+	First I renamed any duplicate states.
+	Q became the union of the two Qs, and the new start and accepting state;
+	Sigma became the union of the two Sigmas;
+	Start state was a new state with an e-transition to both starts;
+	Delta was each delta connected to the new start and the new accepting state
+	Accepting states were reached from previous accepting states
+4.NFA Concat:
+	First I rename any duplicate states.
+	Q became the union of the two Qs;
+	Sigma became the union of the two Sigmas;
+	Start was start of first machine, accept from first machine transitioned to start of second machine and second machine accept was accept.
+5.NFA Star:
+	Q added a new start and new accept
+	Sigma remained the same
+	Delta added new start and accept and created new e-transitions from new start to old start and new accept, and from old accept to old start and new accept
+6. Regex to NFA:
+	I utilized a parsing code I found online to break the expression into tokens and then I used the tokens to build a delta function based on the letters and the operations.  I couldn't get it to work.
+7. Bool Regex and string:
+	I created a simple method that ran the expression and string through steps 6, 2, and 1.
+	
+For testing I created the include test suite.  
+
+	
